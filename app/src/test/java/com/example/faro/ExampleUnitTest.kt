@@ -1,5 +1,6 @@
 package com.example.faro
 
+import android.util.Log
 import org.junit.Test
 
 import org.junit.Assert.*
