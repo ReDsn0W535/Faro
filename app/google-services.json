@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "643606447189",
+    "firebase_url": "https://zinc-hall-251719.firebaseio.com",
+    "project_id": "zinc-hall-251719",
+    "storage_bucket": "zinc-hall-251719.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643606447189:android:1b31f10fe5b0bbe4b840dc",
+        "android_client_info": {
+          "package_name": "com.example.faro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643606447189-3d9mh1erg8apoe2cpnbd82vaa1uhosfn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASoF5XjKQcjRoHszX3D0D5H2iAQKgmDTo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643606447189-3d9mh1erg8apoe2cpnbd82vaa1uhosfn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
