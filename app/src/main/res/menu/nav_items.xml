@@ -5,25 +5,25 @@
     <item
         android:id="@+id/icon1"
         android:title=""
-        android:icon="@drawable/ic_launcher_background"/>
+        android:icon="@drawable/common_full_open_on_phone"/>
 
     <item
         android:id="@+id/icon2"
         android:title=""
-        android:icon="@drawable/ic_launcher_background"/>
+        android:icon="@drawable/common_full_open_on_phone"/>
 
     <item
-        android:id="@+id/icon3"
-        android:title=""
-        android:icon="@drawable/ic_launcher_background"/>
+        android:id="@+id/search"
+        android:title="@string/search"
+        android:icon="@drawable/common_full_open_on_phone" />
 
     <item
         android:id="@+id/icon4"
         android:title=""
-        android:icon="@drawable/ic_launcher_background"/>
+        android:icon="@drawable/common_full_open_on_phone"/>
 
     <item
         android:id="@+id/icon5"
         android:title=""
-        android:icon="@drawable/ic_launcher_background"/>
+        android:icon="@drawable/common_full_open_on_phone"/>
 </menu>
