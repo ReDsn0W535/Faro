@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="customize_search_components">
+        <item>Type</item>
+        <item>Genres</item>
+        <item>Date</item>
+        <item>Price</item>
+        <item>Location</item>
+    </string-array>
+</resources>
