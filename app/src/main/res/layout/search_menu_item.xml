@@ -4,8 +4,8 @@
     <data>
 
         <variable
-            name="menuItem"
-            type="com.example.faro.ui.search.SearchMenuItemViewModel" />
+            name="viewModel"
+            type="com.example.faro.ui.search.searchRecycleView.SearchMenuItemViewModel" />
 
     </data>
 
@@ -32,7 +32,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
-                        android:text="@={menuItem.value}" />
+                        android:text="@={viewModel.title}" />
 
                     <ImageView
                         android:layout_width="wrap_content"

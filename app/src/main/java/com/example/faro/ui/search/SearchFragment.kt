@@ -9,7 +9,7 @@ import com.example.faro.BR
 import com.example.faro.R
 import com.example.faro.ViewModelProviderFactory
 import com.example.faro.databinding.SearchFragmentBinding
-import com.example.faro.ui.search.SearchFragmentViewModel
+import com.example.faro.ui.search.SearchViewModel
 import com.example.faro.ui.search.SearchNavigator
 import com.example.faro.ui.search.searchRecycleView.SearchRecyclerAdapter
 import com.example.faro.view.BaseFragment
@@ -17,13 +17,14 @@ import javax.inject.Inject
 
 
 class SearchFragment(layout: Int) :
-    BaseFragment<SearchFragmentBinding, SearchFragmentViewModel>(layout), SearchNavigator {
+    BaseFragment<SearchFragmentBinding, SearchViewModel>(layout), SearchNavigator {
 
     @Inject
     internal lateinit var factory: ViewModelProviderFactory
-
+    @Inject
+    internal lateinit var adapter: SearchRecyclerAdapter
     lateinit var binding: SearchFragmentBinding
-    private lateinit var fragmentViewModel: SearchFragmentViewModel
+    private lateinit var searchViewModel: SearchViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -37,8 +38,7 @@ class SearchFragment(layout: Int) :
         binding.searchRecyclerView.apply {
             this.layoutManager = layoutManager
             itemAnimator = DefaultItemAnimator()
-            adapter =
-                SearchRecyclerAdapter(resources.getStringArray(R.array.customize_search_components))
+            adapter = this@SearchFragment.adapter
         }
     }
 
@@ -51,9 +51,9 @@ class SearchFragment(layout: Int) :
         return BR.viewModel
     }
 
-    override fun getViewModel(): SearchFragmentViewModel {
-        fragmentViewModel =
-            ViewModelProviders.of(this, factory).get(SearchFragmentViewModel::class.java)
-        return fragmentViewModel
+    override fun getViewModel(): SearchViewModel {
+        searchViewModel =
+            ViewModelProviders.of(this, factory).get(SearchViewModel::class.java)
+        return searchViewModel
     }
 }

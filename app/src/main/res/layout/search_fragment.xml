@@ -7,14 +7,14 @@
 
         <variable
             name="viewModel"
-            type="com.example.faro.ui.search.SearchFragmentViewModel" />
+            type="com.example.faro.ui.search.SearchViewModel" />
     </data>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/search_recycler_view"
-
+        app:adapter="@{viewModel.openSourceItemsLiveData}"
         tools:listitem=""
         android:scrollbars="vertical"/>
 </layout>

@@ -9,7 +9,6 @@ import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import com.example.faro.BR
 import com.example.faro.ui.base.BaseActivity
 import dagger.android.support.AndroidSupportInjection
 
@@ -18,7 +17,7 @@ abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel<*>>(layout: I
 
     private var mActivity: BaseActivity<*,*>? = null
     private var mRootView: View? = null
-    private var viewDataBinding: T? = null
+    private var fragmentDataBinding: T? = null
     private var viewModel: V? = null
 
     @LayoutRes
@@ -26,20 +25,20 @@ abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel<*>>(layout: I
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        viewDataBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false)
-        mRootView = viewDataBinding?.root
+        fragmentDataBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false)
+        mRootView = fragmentDataBinding?.root
         return mRootView
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewDataBinding?.setVariable(getBindingVariable(), viewModel)
-        viewDataBinding?.lifecycleOwner = this
-        viewDataBinding?.executePendingBindings()
+        fragmentDataBinding?.setVariable(getBindingVariable(), viewModel)
+        fragmentDataBinding?.lifecycleOwner = this
+        fragmentDataBinding?.executePendingBindings()
     }
 
     fun getViewDataBinding(): T? {
-        return viewDataBinding
+        return fragmentDataBinding
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

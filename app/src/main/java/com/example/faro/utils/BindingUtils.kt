@@ -1,14 +1,21 @@
 package com.example.faro.utils
 
-import android.view.View
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.faro.ui.search.SearchMenuItemViewModel
+import com.example.faro.ui.search.searchRecycleView.SearchMenuItemViewModel
+import com.example.faro.ui.search.searchRecycleView.SearchRecyclerAdapter
 
-public final class BindingUtils private constructor(){
+class BindingUtils private constructor() {
 
-    @BindingAdapter("adapter")
-    fun addSearchItems(recyclerView: RecyclerView, values : List<SearchMenuItemViewModel>){
-
+    companion object {
+        @BindingAdapter("adapter")
+        @JvmStatic
+        fun addSearchItems(recyclerView: RecyclerView, values: List<SearchMenuItemViewModel>) {
+            val adapter = recyclerView.adapter as SearchRecyclerAdapter?
+            adapter?.let {
+                adapter.clearItems()
+                adapter.addItems(values)
+            }
+        }
     }
 }
